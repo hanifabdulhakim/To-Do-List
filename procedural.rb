@@ -1,6 +1,8 @@
 alias p puts
 alias g gets
+p "\n"
 p 'todo list command line'
+p "\n"
 
 def main_loop 
 	while true do
