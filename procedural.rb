@@ -25,10 +25,11 @@ def main_loop
 			p "\n"
 			perlihatkan_semua_tugas
 			p "\n"
-			p 'pilih nama file nya apa? (wajib menggunakan .txt extension)'
+			print 'pilih nama file nya apa? (wajib menggunakan .txt extension) : '
 			file = g.chomp
 			p "\n"
 			p 'tugas d dalam file ini adalah : '
+			p "\n"
 			lihat_tugas(file)
 			p "\n"
 		when 3
@@ -39,15 +40,15 @@ end
 
 
 def buat_tugas
-	p 'masukan tugas yg ingin d lakukan?'
+	print 'masukan tugas yg ingin d lakukan! : '
 	t = g.chomp
 	p "\n"
-	p 'apakah ingin d masukkan ke dalam file? (yes/no)'
+	print 'apakah ingin d masukkan ke dalam file? (yes/no) : '
 	o = g.chomp
 	p "\n"
 	case o
 	when /yes/
-		p 'apa nama file nya? (wajib menggunakan .txt extension)'
+		print 'apa nama file nya? (wajib menggunakan .txt extension) : '
 		f = g.chomp
 		fixed_filename = check_extension(f)
 		buat_file(fixed_filename,t)
@@ -75,7 +76,7 @@ end
 
 def simpan_ke_dalam_file(filename, tugas)
 	if File.exist? filename
-		p 'file sudah ada, apakah ingin d tambah? (yes/no)'
+		print 'file sudah ada, apakah ingin d tambah? (yes/no) : '
 		o = g.chomp
 		case o
 		when /yes/
